@@ -1,4 +1,6 @@
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
+// Strip any trailing slash — Railway's env var often ends with '/' which combined
+// with the leading '/' in each path produces double slashes (//api/...)
+const API_BASE = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001').replace(/\/$/, '');
 
 export interface Session {
   session_id: string;
