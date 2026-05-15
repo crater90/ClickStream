@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 224 14% 6%;
+    --foreground: 220 20% 88%;
+
+    --card: 224 12% 9%;
+    --card-foreground: 220 20% 88%;
+
+    --border: 224 12% 14%;
+    --input: 224 12% 14%;
+    --ring: 252 80% 65%;
+
+    --primary: 252 80% 65%;
+    --primary-foreground: 224 14% 6%;
+
+    --secondary: 224 12% 12%;
+    --secondary-foreground: 220 20% 70%;
+
+    --muted: 224 12% 12%;
+    --muted-foreground: 220 14% 45%;
+
+    --accent: 224 12% 14%;
+    --accent-foreground: 220 20% 88%;
+
+    --radius: 0.6rem;
+
+    --font-sans: 'Syne', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: hsl(var(--background)); }
+::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground)); }
+
+/* Custom utilities */
+.glass {
+  background: hsl(var(--card) / 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--border));
+}
+
+.glow-primary {
+  box-shadow: 0 0 30px hsl(var(--primary) / 0.2);
+}
