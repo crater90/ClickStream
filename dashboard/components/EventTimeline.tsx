@@ -106,7 +106,7 @@ export function EventTimeline({ sessionId, onClose }: EventTimelineProps) {
                   {truncateUrl(event.page_url)}
                 </p>
 
-                {event.event_type === 'click' && event.click_x !== undefined && (
+                {event.event_type === 'click' && event.click_x !== undefined && event.click_y !== undefined && (
                   <p className="text-xs text-muted-foreground/70 mt-0.5 font-mono">
                     x:{Math.round(event.click_x)} y:{Math.round(event.click_y)}
                   </p>
